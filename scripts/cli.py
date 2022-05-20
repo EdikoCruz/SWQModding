@@ -29,6 +29,10 @@ def main():
         print("unpacking .z files")
         zHandler = ZHandler(gameFolder)
         zHandler.unpackAll()
+
+        # TODO: create .original and .temp
+        # TODO: install mods on .temp
+        # TODO: remove .temp extension from file name
     elif args.uninstall:
         print("uninstalling...")
 
@@ -39,6 +43,9 @@ def main():
         print("packing .impak files")
         impakHandler = ImpakHandler(gameFolder)
         impakHandler.packAll()
+
+        # TODO: remove files if same name.original
+        # TODO: remove .originals extension from file name
     else:
         parser.print_help()
 

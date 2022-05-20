@@ -1,0 +1,41 @@
+{
+    ignoreEnvFlag: "MOD_FAST_GAMEPLAY",
+    rules: [
+        {
+            method: "replaceText",
+            options: [
+                fileTarget: "Definitions/areas.xml",
+                text: [
+                    { from: "<IntroMovie>Movie/Intro</IntroMovie>", to: "" },
+                    { from: "<OutroMovie>Movie/Outro</OutroMovie>", to: "" },
+                ]
+            ]
+        },
+        {
+            method: "replaceFile",
+            options: [
+                "Definitions/conversations.xml",
+                "Lua/Scenario/Act_1/Mushroom/02_onenter_coglins.lua",
+                "Lua/Scenario/Act_1/Mushroom/04_statue.lua",
+                "Lua/Scenario/Act_1/Mushroom/05_after_mushroom.lua",
+                "Lua/Scenario/Act_1/Mushroom/05_pick_mushroom.lua",
+                "Lua/Scenario/Act_1/Mushroom/06_ambush.lua"
+            ]
+        },
+        {
+            method: "replaceFile",
+            options: {
+                target: [
+                    "Lua/Scenario/Act_1/Mushroom/01_try_leave.lua",
+                    "Lua/Scenario/Act_1/Mushroom/03_mushroom_onenter.lua",
+                    "Lua/Scenario/Act_1/Mushroom/05_after_mushroom.lua",
+                    "Lua/Scenario/Act_1/Mushroom/05_see_mushrooms.lua",
+                    "Lua/Scenario/Act_1/Mushroom/05_try_leave.lua",
+                    "Lua/Scenario/Act_1/Mushroom/chapter1_start_onenter.lua",
+                    "Lua/Scenario/Act_1/Mushroom/secret_room_onenter.lua",
+                ],
+                source: "Lua/empty.lua"
+            }
+        }
+    ]
+}
